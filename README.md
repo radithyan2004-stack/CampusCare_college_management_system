@@ -27,9 +27,9 @@ mysql -u root -p < database/migrations/002_add_college_contact.sql
 ```
 
 ## 2. Configure database credentials
-Set `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASS` in the environment where PHP runs, or update the corresponding settings in `app/config.php`. The default database user is `campuscare_app` and the password is blank, so configure credentials before starting the application. For local MySQL, use host `127.0.0.1`, port `3306`, and database `campuscare`. Do not use the MySQL root account in production; create a restricted database user.
+Copy `.env.example` to `.env` and set `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASS` for your MySQL installation. The `.env` file is local and ignored by Git. Environment variables already set in PHP take precedence over values in `.env`. For local MySQL, use host `127.0.0.1`, port `3306`, and database `campuscare`. Do not use the MySQL root account in production; create a restricted database user.
 
-For a local shell session:
+Alternatively, configure these environment variables where PHP runs. For example:
 ```bash
 export DB_HOST=127.0.0.1
 export DB_PORT=3306
